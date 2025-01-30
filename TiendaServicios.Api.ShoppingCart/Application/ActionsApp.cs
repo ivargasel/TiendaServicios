@@ -29,16 +29,19 @@ namespace TiendaServicios.Api.ShoppingCart.Application
             }
 
             int id = data.ShoppingCartId;
-            foreach(var item in request.Items)
+            if (request.Items != null)
             {
-                var detail = new ShoppingCartDetailDTO
+                foreach (var item in request.Items)
                 {
-                    CreatedDate = DateTime.Now,
-                    Product = item, 
-                    ShoppingCartId = id
-                };
-                var dataDetail = mapper.Map<ShoppingCartDetailModel>(detail);
-                context.ShoppingCartDetails.Add(dataDetail);               
+                    var detail = new ShoppingCartDetailDTO
+                    {
+                        CreatedDate = DateTime.Now,
+                        Product = item,
+                        ShoppingCartId = id
+                    };
+                    var dataDetail = mapper.Map<ShoppingCartDetailModel>(detail);
+                    context.ShoppingCartDetails.Add(dataDetail);
+                }
             }
 
             response = await context.SaveChangesAsync();

@@ -9,8 +9,9 @@
           "Port": 8080
         }
       ],
-      "UpstreamPathTemplate": "/book",
-      "UpstreamHttpMethod": [ "GET", "POST", "PUT" ]
+      "UpstreamPathTemplate": "/books",
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT" ],
+      "Key": "TotalBooks"
     },
     {
       "DownstreamPathTemplate": "/api/books/{id}",
@@ -21,8 +22,69 @@
           "Port": 8080
         }
       ],
-      "UpstreamPathTemplate": "/book/{id}",
+      "UpstreamPathTemplate": "/books/{id}",
+      "UpstreamHttpMethod": [ "GET", "DELETE" ],
+      "DelegatingHandlers": [
+        "BookHandler"
+      ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/author",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "tiendaservicios.api.author",
+          "Port": 8080
+        }
+      ],
+      "UpstreamPathTemplate": "/authors",
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT" ],
+      "Key": "TotalAuthors"
+    },
+    {
+      "DownstreamPathTemplate": "/api/author/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "tiendaservicios.api.author",
+          "Port": 8080
+        }
+      ],
+      "UpstreamPathTemplate": "/authors/{id}",
       "UpstreamHttpMethod": [ "GET", "DELETE" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/shoppingCart",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "tiendaservicios.api.shoppingcart",
+          "Port": 8080
+        }
+      ],
+      "UpstreamPathTemplate": "/shoppingCart",
+      "UpstreamHttpMethod": [ "GET", "POST", "PUT" ]
+    },
+    {
+      "DownstreamPathTemplate": "/api/shoppingCart/{id}",
+      "DownstreamScheme": "http",
+      "DownstreamHostAndPorts": [
+        {
+          "Host": "tiendaservicios.api.shoppingcart",
+          "Port": 8080
+        }
+      ],
+      "UpstreamPathTemplate": "/shoppingCart/{id}",
+      "UpstreamHttpMethod": [ "GET", "DELETE" ]
+    }
+  ],
+  "Aggregates": [
+    {
+      "RouteKeys": [
+        "TotalBooks",
+        "TotalAuthors"
+      ],
+      "UpstreamPathTemplate": "/books-authors"
     }
   ]
 }

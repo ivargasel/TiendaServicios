@@ -104,7 +104,7 @@ namespace TiendaServicios.Api.Book.Tests
             var book = await actions.Create(new DTO.BookDTO
             {
                 BookId = Guid.NewGuid(),
-                PublisheddDate = DateTime.Now,
+                PublishedDate = DateTime.Now,
                 Title = "PRUEBA",
                 BookAuthorId = Guid.Empty,
             });

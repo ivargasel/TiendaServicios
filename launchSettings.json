@@ -6,7 +6,8 @@
       "serviceActions": {
         "tiendaservicios.api.author": "StartDebugging",
         "tiendaservicios.api.book": "StartDebugging",
-        "tiendaservicios.api.gateway": "StartDebugging"
+        "tiendaservicios.api.gateway": "StartDebugging",
+        "tiendaservicios.api.shoppingcart": "StartDebugging"
       }
     }
   }

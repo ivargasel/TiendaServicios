@@ -15,8 +15,16 @@ services:
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
       - ASPNETCORE_HTTP_PORTS=8080
+      - Services__Authors="http://tiendaservicios.api.gateway"
     depends_on:
       - tiendaservicios.api.book
     ports:
       - "6106:8080"
+  tiendaservicios.api.shoppingcart:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_HTTP_PORTS=8080
+      - Services__Books="http://tiendaservicios.api.book"
+    ports:
+      - "6107:8080"
 
