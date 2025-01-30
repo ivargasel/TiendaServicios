@@ -9,6 +9,5 @@ namespace TiendaServicios.Api.Book.Model
         public string Title { get; set; }
         public DateTime PublisheddDate { get; set; }
         public Guid BookAuthorId { get; set; }
-
     }
 }

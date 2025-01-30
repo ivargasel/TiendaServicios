@@ -66,9 +66,8 @@ namespace TiendaServicios.Api.Book.Application
 
         public async Task<List<BookDTO>> Index()
         {
-            var data = await context.Books.Select(x => mapper.Map<BookDTO>(x)).ToListAsync();
-            if (data.Count > 0)
-                return data;
+            var data = await context.Books.Select(x => mapper.Map<BookDTO>(x)).ToListAsync();                           
+            return data;
 
             throw new Exception("Error para traer la información");
         }

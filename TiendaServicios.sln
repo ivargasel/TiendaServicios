@@ -11,6 +11,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TiendaServicios.Api.Shoppin
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TiendaServicios.Api.Book.Tests", "TiendaServicios.Api.Book.Tests\TiendaServicios.Api.Book.Tests.csproj", "{58283093-7E4E-4F06-9E99-29A24B89A909}"
 EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{A32ADA4F-7773-4E1F-ABC6-CF9948232C77}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TiendaServicios.Api.Gateway", "TiendaServicios.Api.Gateway\TiendaServicios.Api.Gateway.csproj", "{0ABAE129-FEF0-4DFA-80FB-13225AC7808E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +37,14 @@ Global
 		{58283093-7E4E-4F06-9E99-29A24B89A909}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{58283093-7E4E-4F06-9E99-29A24B89A909}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{58283093-7E4E-4F06-9E99-29A24B89A909}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A32ADA4F-7773-4E1F-ABC6-CF9948232C77}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A32ADA4F-7773-4E1F-ABC6-CF9948232C77}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A32ADA4F-7773-4E1F-ABC6-CF9948232C77}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A32ADA4F-7773-4E1F-ABC6-CF9948232C77}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0ABAE129-FEF0-4DFA-80FB-13225AC7808E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0ABAE129-FEF0-4DFA-80FB-13225AC7808E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0ABAE129-FEF0-4DFA-80FB-13225AC7808E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0ABAE129-FEF0-4DFA-80FB-13225AC7808E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

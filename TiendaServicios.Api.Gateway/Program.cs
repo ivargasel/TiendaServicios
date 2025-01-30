@@ -1,7 +1,5 @@
-using Microsoft.EntityFrameworkCore;
-using TiendaServicios.Api.Author.Application;
-using TiendaServicios.Api.Author.Model;
-using TiendaServicios.Api.Author.Persistence;
+using Ocelot.DependencyInjection;
+using Ocelot.Middleware;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,14 +9,8 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-
-builder.Services.AddDbContext<AuthorContext>(opts =>
-{
-    opts.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection"));
-});
-
-builder.Services.AddAutoMapper(typeof(AutoMapperProfiles));
-builder.Services.AddTransient<IActionsApp, ActionsApp>();
+builder.Services.AddOcelot();
+builder.Configuration.AddJsonFile($"ocelot.json");
 
 var app = builder.Build();
 
@@ -32,5 +24,7 @@ if (app.Environment.IsDevelopment())
 app.UseAuthorization();
 
 app.MapControllers();
+
+await app.UseOcelot();
 
 app.Run();

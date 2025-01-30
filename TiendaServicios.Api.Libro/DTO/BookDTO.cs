@@ -9,7 +9,7 @@ namespace TiendaServicios.Api.Book.DTO
         [Required(ErrorMessage = "El campo 'Titulo' es requerido")]
         public string Title { get; set; }
         
-        public DateTime PublisheddDate { get; set; } = DateTime.Now;
+        public DateTime PublishedDate { get; set; } = DateTime.Now;
         
         public Guid BookAuthorId { get; set; }
     }
